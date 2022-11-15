@@ -2,67 +2,35 @@ $(document).ready(function ($) {
     "use strict";
 
 
-    var book_table = new Swiper(".book-table-img-slider", {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        speed: 2000,
-        effect: "coverflow",
-        coverflowEffect: {
-            rotate: 3,
-            stretch: 2,
-            depth: 100,
-            modifier: 5,
-            slideShadows: false,
-        },
-        loopAdditionSlides: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-    });
-
-    var team_slider = new Swiper(".team-slider", {
+    var swiper = new Swiper(".slide-content", {
         slidesPerView: 3,
-        spaceBetween: 30,
+        spaceBetween: 25,
         loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        speed: 2000,
-
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
+        centerSlide: 'true',
+        fade: 'true',
+        grabCursor: 'true',
         pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
         },
-        breakpoints: {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      
+        breakpoints:{
             0: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
             },
-            768: {
+            520: {
                 slidesPerView: 2,
             },
-            992: {
-                slidesPerView: 3,
-            },
-            1200: {
+            950: {
                 slidesPerView: 3,
             },
         },
-    });
+      });
 
     jQuery(".filters").on("click", function () {
         jQuery("#menu-dish").removeClass("bydefault_show");
